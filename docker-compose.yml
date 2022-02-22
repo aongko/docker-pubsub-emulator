@@ -2,9 +2,9 @@ version: '3'
 services:
   pubsub-emulator:
     image: aongko/pubsub-emulator
-    container_name: pubsub_emulator
+    build: .
     ports:
-      - "8538:8538"
+      - "8085:8085"
     volumes:
       - ./data:/data
-    command: ["start", "--host-port=0.0.0.0:8538", "--data-dir=/data"]
+    command: ["--host-port=0.0.0.0:8538", "--data-dir=/data"]

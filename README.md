@@ -6,7 +6,7 @@ This image is intended to be used in development environments, such as for testi
 For documentation regarding Pub/Sub emulator, you can check its [documentation](https://cloud.google.com/pubsub/docs/emulator).
 
 ## Usage
-The following shell statement will start the *Pub/Sub Emulator* on port 8538.
+The following shell statement will start the *Pub/Sub Emulator* on port 8085.
 
 ```sh
 docker run --rm -it -p 8538:8538 aongko/pubsub-emulator

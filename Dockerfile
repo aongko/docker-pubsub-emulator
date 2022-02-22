@@ -1,12 +1,13 @@
-FROM google/cloud-sdk:183.0.0-alpine
+FROM google/cloud-sdk:alpine
 
-RUN apk --update add openjdk7-jre && \
-  gcloud components install --quiet beta pubsub-emulator
+RUN apk --update add openjdk8-jre && \
+  gcloud components install --quiet beta pubsub-emulator && \
+  gcloud components update
 
-EXPOSE 8538
+EXPOSE 8085
 
 VOLUME /data
 
-ENTRYPOINT ["gcloud", "beta", "emulators", "pubsub"]
+ENTRYPOINT ["gcloud", "beta", "emulators", "pubsub", "start"]
 
-CMD ["start", "--host-port=0.0.0.0:8538", "--data-dir=/data"]
+CMD ["--host-port=0.0.0.0:8538", "--data-dir=/data"]
